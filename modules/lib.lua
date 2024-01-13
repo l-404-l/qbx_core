@@ -170,7 +170,7 @@ if isServer then
         end, 5000)
 
         local netId = NetworkGetNetworkIdFromEntity(veh)
-        lib.callback.await('qbx_core:client:vehicleSpawned', owner, netId, props)
+        Entity(veh).state.setVehicleProperties = props
         return netId
     end
 else
