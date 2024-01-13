@@ -170,7 +170,7 @@ if isServer then
         end, 5000)
 
         local netId = NetworkGetNetworkIdFromEntity(veh)
-        Entity(veh).state.setVehicleProperties = props
+        Entity(veh).state:set('setVehicleProperties', props, true)
         return netId
     end
 else
